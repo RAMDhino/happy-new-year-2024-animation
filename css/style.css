@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'RubikDoodleShadow';
+    src: url('font/RubikDoodleShadow-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    font-family: 'RubikDoodleShadow', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    --bg-color: #DADADA;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+.canvas-container {
+    position: relative;
+}
+
+.canvas-container::before {
+    content: "HAPPY NEW YEAR!";
+    color: #FAFAFA;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: clamp(1rem, 2em, 6rem);
+    font-weight: 900;
+    font-size: max(1.2rem, 3vw);
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+canvas {
+    width: 100%;
+}
+
+.land {
+    position: relative;
+    overflow-x: visible;
+}
+
+.land > * {
+    position: absolute;
+}
+
+.building {
+    --_height: var(--building-height);
+    --_width: var(--building-width);
+    background-color: var(--bg-color);
+    bottom: 0;
+    height: var(--_height);
+    width: var(--_width);
+}
+
+.b1 {
+    --building-height: 5rem;
+    --building-width: 2rem;
+    left: 50rem;
+}
+
+.b2 {
+    --building-height: 3.5rem;
+    --building-width: 3rem;
+    left: 52rem;
+}
+
+.b3 {
+    --building-height: 7rem;
+    --building-width: 2rem;
+    left: 55rem;
+}
+
+.b5 {
+    --building-height: 4.3rem;
+    --building-width: 2rem;
+    left: 59rem;
+}
+
+.b6 {
+    --building-height: 3rem;
+    --building-width: 0.85rem;
+    left: 61rem;
+}
+
+.b7 {
+    --building-height: 5.3rem;
+    --building-width: 1.5rem;
+    left: 63rem;
+}
+
+.mountain {
+    --_kaki1: var(--a);
+    --_kaki2: var(--b);
+    border-bottom: solid var(--a) var(--bg-color);
+    border-right: solid var(--b) transparent;
+    transform: rotate(133.75deg);
+}
+
+.m1 {
+    --a: 10rem;
+    --b: 24rem;
+    left: -10rem;
+}
+
+.m2 {
+    --a: 5rem;
+    --b: 12rem;
+}
+
+.m3 {
+    --a: 14rem;
+    --b: 24rem;
+    left: 4rem;
+}
+
+.m4 {
+    --a: 7rem;
+    --b: 12rem;
+    left: 30rem;
+}
+
+.m5 {
+    --a: 16rem;
+    --b: 19rem;
+    left: 24rem;
+}
+
+.message {
+    position: relative;
+    z-index: 99;
+    display: grid;
+    grid-gap: max(24rem, 45vw);
+    place-items: center;
+}
+
+.message > * {
+    text-align: center;
+    width: 40vw;
+    font-size: clamp(2rem, 5vw, 10rem);
+}
+
+.message :first-child {
+    margin-top: max(24rem, 45vw);
+}
+
+.message :last-child {
+    margin-bottom: max(24rem, 45vw);
+}
